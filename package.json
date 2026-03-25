@@ -2,16 +2,23 @@
   "name": "telegram-bot-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js",
-    "check": "node --check index.js && node --check bot.js && node --check src/config.js && node --check src/data/faqs.js && node --check src/bot/keyboards.js && node --check src/bot/middleware/rateLimit.js && node --check src/bot/registerHandlers.js && node --check src/bot/createBot.js",
+    "build": "tsc",
+    "dev": "tsx index.ts",
+    "start": "npm run build && node dist/index.js",
+    "check": "tsc --noEmit",
     "test": "npm run check"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^6.0.2"
+  },
   "dependencies": {
     "dotenv": "^17.3.1",
     "telegraf": "^4.16.3"

@@ -1,9 +1,9 @@
-require('dotenv').config();
+import 'dotenv/config';
 
-const { createBot } = require('./src/bot/createBot');
-const { getConfig } = require('./src/config');
+import { createBot } from './src/bot/createBot';
+import { getConfig } from './src/config';
 
-async function bootstrap() {
+async function bootstrap(): Promise<void> {
     const config = getConfig();
     const bot = createBot(config);
 
@@ -21,7 +21,7 @@ async function bootstrap() {
     process.once('SIGTERM', () => bot.stop('SIGTERM'));
 }
 
-bootstrap().catch((error) => {
+bootstrap().catch((error: unknown) => {
     console.error('Failed to start bot:', error);
     process.exit(1);
 });

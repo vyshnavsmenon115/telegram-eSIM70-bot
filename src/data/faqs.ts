@@ -1,4 +1,10 @@
-const faqs = [
+export interface FaqItem {
+    id: string;
+    question: string;
+    answer: string;
+}
+
+export const faqs: FaqItem[] = [
     {
         id: 'buy_esim',
         question: 'When should I buy my eSIM, and does it activate right away?',
@@ -42,7 +48,3 @@ const faqs = [
             'If the QR code has not been installed or the plan has not started, we can usually review refund eligibility. Once a plan is active or consumed, refunds depend on the issue and carrier conditions.',
     },
 ];
-
-module.exports = {
-    faqs,
-};
