@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "check": "node --check index.js && node --check bot.js && node --check src/config.js && node --check src/data/faqs.js && node --check src/bot/keyboards.js && node --check src/bot/middleware/rateLimit.js && node --check src/bot/registerHandlers.js && node --check src/bot/createBot.js",
+    "test": "npm run check"
   },
   "keywords": [],
   "author": "",
